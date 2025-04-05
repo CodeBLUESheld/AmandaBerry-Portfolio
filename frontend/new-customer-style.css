@@ -1,0 +1,257 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background: linear-gradient(90deg, #b12eba 10%, #f9d423 100%); /* Match the "BERRY" logo gradient */
+    color: #f9f9f9;
+    font-size: 1.6rem;
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 800px;
+    margin: 5rem auto;
+    padding: 2rem;
+    background-color: rgba(16, 16, 16, 0.9); /* Slight transparency for contrast */
+    border-radius: 1rem;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+}
+
+h1 {
+    font-size: 3rem;
+    text-align: center;
+    margin-bottom: 2rem;
+    color: #000000; /* Changed text color to black */
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+label {
+    font-size: 1.6rem;
+    color: #f9f9f9;
+}
+
+input, textarea, select {
+    width: 100%;
+    padding: 1rem;
+    font-size: 1.6rem;
+    color: #101010;
+    background-color: #f9f9f9;
+    border: 2px solid #d53582;
+    border-radius: 0.5rem;
+    outline: none;
+    transition: border-color 0.3s ease-in-out;
+}
+
+input:focus, textarea:focus, select:focus {
+    border-color: #f9d423;
+    box-shadow: 0 0 10px #f9d423;
+}
+
+textarea {
+    resize: none;
+    height: 150px;
+}
+
+button {
+    padding: 1rem 2rem;
+    font-size: 1.8rem;
+    color: #f9f9f9;
+    background-color: #d53582;
+    border: none;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out, transform 0.2s ease-in-out;
+}
+
+button:hover {
+    background-color: #f9d423;
+    color: #101010;
+    transform: scale(1.05);
+}
+
+.error-message {
+    color: #f9d423;
+    font-size: 1.4rem;
+    margin-top: -1rem;
+    margin-bottom: 1rem;
+}
+
+.success-message {
+    color: #3ad8f7;
+    font-size: 1.6rem;
+    text-align: center;
+    margin-top: 2rem;
+}
+
+nav {
+    background-color: #101010;
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between; /* Space between logo and navigation links */
+    align-items: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+}
+
+nav .nav__content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+
+nav .nav__content a.logo {
+    font-size: 1.5rem; /* Match the font size */
+    color: var(--text-color); /* Use text color variable */
+    font-weight: 800; /* Match font weight */
+    cursor: pointer; /* Add pointer cursor */
+    transition: 0.3s ease-in-out; /* Add smooth transition */
+}
+
+nav .nav__content a.logo:hover {
+    transform: scale(1.1); /* Add hover effect */
+}
+
+nav .nav__content a.logo span {
+    background: linear-gradient(90deg, #b12eba 10%, #f9d423 100%); /* Match gradient for "Berry" */
+    -webkit-background-clip: text;
+    color: transparent;
+    font-weight: bold; /* Ensure "Berry" is bold */
+}
+
+nav ul {
+    display: flex;
+    gap: 2rem; /* Space between navigation links */
+    list-style: none;
+    margin: 0 auto; /* Center the navigation links */
+    padding-right: 1rem; /* Added padding to move links slightly to the right */
+}
+
+nav ul li a {
+    color: #f9f9f9;
+    text-decoration: none;
+    font-size: 1.6rem;
+    transition: color 0.3s ease-in-out;
+}
+
+nav ul li a:hover {
+    color: #d53582; /* Hover color for navigation links */
+}
+
+.new-customer p {
+    font-size: 1.6rem;
+    text-align: center; /* Center align the text */
+    margin-bottom: 2rem;
+    margin-top: 2rem;
+    color: #f9f9f9;
+}
+
+.new-customer a {
+    color: #d53582;
+    text-decoration: none;
+    font-size: 1.6rem;
+    transition: color 0.3s ease-in-out;
+}
+
+.new-customer a:hover {
+    color: #f9d423;
+}
+
+.new-customer p a {
+    display: inline-flex; /* Align icon and text horizontally */
+    align-items: center; /* Vertically align icon and text */
+    gap: 0.5rem; /* Add spacing between the icon and text */
+    font-size: 1.6rem;
+    color: #d53582;
+    text-decoration: none;
+    transition: color 0.3s ease-in-out;
+    vertical-align: middle; /* Ensure alignment with surrounding text */
+    justify-content: center; /* Center align the links */
+}
+
+.new-customer p a i {
+    font-size: 2.4rem; /* Adjust icon size */
+    line-height: 1; /* Ensure proper alignment with text */
+    display: inline-block; /* Ensure consistent alignment */
+    vertical-align: middle; /* Align icon with text */
+}
+
+.form-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Two columns */
+    gap: 20px; /* Space between rows and columns */
+}
+
+.form-row {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-row label {
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+button[type="submit"] {
+    grid-column: span 2; /* Make the button span across both columns */
+    justify-self: center;
+}
+
+.wrapper {
+    text-align: center;
+    margin-bottom: 2rem; /* Add spacing below the wrapper */
+    padding: 1rem;
+    background: linear-gradient(90deg, #b12eba 10%, #f9d423 100%); /* Match the "BERRY" logo gradient */
+    border-radius: 0.5rem;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+}
+
+.wrapper-header {
+    font-size: 2.4rem;
+    font-weight: bold;
+    color: #1748e7; /* Changed text color to green */
+    margin-bottom: 1rem;
+}
+
+.wrapper p {
+    color: #f7f2f2; /* Match the color of "Welcome! Have A Project?" */
+    font-size: 1.6rem;
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+
+    @media(max-width: 600px){
+    .wrapper header{
+        text-align: center;
+    }
+    form .dbl-field{
+        flex-direction: column;
+        margin-bottom: 0px;
+    }
+    .dbl-field .field{
+        width: 100%;
+        margin-bottom: 20px;
+    }
+    form.message textarea{
+        resize: none;
+    }
+    form .button-area{
+        flex-direction: column;
+    }
+    .button-area button{
+        width: 100%;
+    }
+    .button-area span{
+        text-align: center;
+        margin-right: 20px 0;
+    }
+}

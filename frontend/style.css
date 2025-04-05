@@ -1,0 +1,748 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    scroll-behavior: smooth;
+    font-family: 'Poppins', sans-serif;
+}
+
+:root {
+    --bg-color: #161615;
+    --secondary-bg-color: #101010;
+    --text-color: #f9f9f9;
+    --main-color: #d53582;
+}
+html {
+    font-size: 62.5%; 
+    overflow-x: hidden; /* Prevent horizontal scrolling */
+    scroll-behavior: smooth; /* Enable smooth scrolling */
+}
+body {
+    background: var(--bg-color);
+    color: var(--text-color);
+    font-size: 1.6rem; 
+}
+.header {
+    position: fixed;
+    inline-size: 100%;
+    inset-block-start: 0;
+    inset-inline-start: 0;
+    padding: 4rem 15%; 
+    background: rgba(245, 84, 84, 0.3);
+    backdrop-filter: blur(10px);
+    display: flex;
+    justify-content: space-between; 
+    text-align: center; 
+    align-items: center;
+    z-index: 1000;
+}
+#menu-icon {
+    font-size: 5.5rem; 
+    display: none; 
+}
+
+.logo{
+    font-size: 2rem; /* Increase font size for a larger logo */
+    color: var(--text-color);
+    font-weight:800;
+    cursor: pointer;
+    display: inline-block; /* Ensure proper alignment */
+    transition: transform 0.2s ease-in-out; /* Smooth scaling transition */
+}
+
+.logo:hover{
+    transform: scale(1.05); /* Limit scaling to avoid excessive expansion */
+}
+
+span {
+    background: linear-gradient(90deg, #f9d423 0%, #b12eba 70%, #f9d423 100%); /* Extend gradient */
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+.navbar {
+    background: linear-gradient(180deg, rgba(245, 129, 212, 0.8) 0%, rgba(193, 99, 209, 0.5) 80%, rgba(239, 25, 186, 0.8) 100%); /* Previous gradient */
+    height: 15rem; 
+    display: flex; 
+    position: static; 
+    padding: 0; 
+    border: none; 
+    transition: none; 
+    align-items: center; 
+}
+
+.navbar.active {
+    display: flex; 
+}
+
+.navbar a {
+    font-size: 1.8rem;
+    margin: 4;
+    color: var(--text-color);
+    text-align: left;
+    font-weight: 600;
+    transition: color 0.3s ease-in-out, text-shadow 0.3s ease-in-out; 
+    text-wrap: nowrap; 
+    border-bottom: 3px solid transparent; 
+}
+
+.navbar a:hover {
+    color: var(--main-color); 
+    text-shadow: 0 0 10px #ffffff, 0 0 20px #ffffff; 
+    transform: scale(1.5); 
+    transition: all 0.3s ease-in-out; 
+}
+
+nav {
+    background: linear-gradient(180deg, rgba(51, 41, 41, 0.8) 0%, rgba(33, 30, 30, 0.5) 80%, rgba(29, 29, 29, 0.8) 100%); /* Extend gradient vertically */
+    height: 10rem; /* Decrease height by 10 units */
+    padding: .5rem 4rem; /* Increase padding to make the navigation bar longer */
+    display: 2.5rem flex;
+    justify-content: space-between; /* Space between logo and navigation links */
+    align-items: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+    position: sticky; /* Make the navbar sticky */
+    top: 0; /* Stick to the top of the viewport */
+    z-index: 1000; /* Ensure it stays above other elements */
+}
+
+nav .nav__content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+} 
+
+
+nav .nav__content a.logo span {
+    background: linear-gradient(90deg, #b12eba 20%, #f9d423 80%); 
+    -webkit-background-clip: text;
+    color: transparent;
+    font-weight: bold; 
+}
+
+nav ul {
+    display: flex;
+    gap: 2rem; 
+    list-style: none;
+    margin: 0 auto; 
+    padding-right: 1rem; 
+}
+
+nav ul li a {
+    color: var(--text-color);
+    text-decoration: none;
+    font-size: 1.6rem;
+    transition: color 0.3s ease-in-out, text-shadow 0.3s ease-in-out; /* Add transition for glow effect */
+}
+
+nav ul li a:hover {
+    color: var(--main-color); 
+    text-shadow: 0 0 10px #ffffff, 0 0 20px #ffffff; /* Add bright white glow effect */
+}
+
+.gradient-btn {
+    font-size: 1.8rem;
+    padding: 1rem;
+    border-radius: 3rem;
+    background: transparent; 
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    color: white;
+    border: none;
+    text-wrap: nowrap;
+}
+
+.gradient-btn:hover {
+    transform: scale(1.08); 
+    background: transparent; 
+    box-shadow: 0 0 15px var(--main-color); 
+}
+
+section {
+    min-block-size: auto; 
+    padding: 10rem 5%; 
+}
+.home {
+    display: flex;
+    align-items: center; 
+    justify-content: center; 
+    flex-direction: row-reverse; 
+    gap: 5rem;
+    height: 100%; 
+    padding-block-start: 0; 
+}
+.home-img {
+    flex: 1.9; 
+    display: flex;
+    justify-content: flex-start; 
+    align-items: flex-start;
+}
+.home-img img {
+    inline-size: 450px;
+    block-size: 450px; 
+    border-radius: 50%; 
+    box-shadow: 0 0 15px var(--main-color);
+    transition: 0.4s ease-in-out;
+}
+.home-img img:hover{
+    box-shadow: 0 0 25px var(--main-color),
+                0 0 50px var(--main-color),
+                0 0 100px var(--main-color);
+}
+.home-content {
+    flex: 2; 
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; 
+    text-align: start; 
+}
+.home-content h1 {
+    font-size: 4rem;
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 1rem;
+}
+
+.home-content h1 span {
+    color: var(--main-color);
+}
+
+.home-content h3 {
+    font-size: 2.4rem;
+    font-weight: 500;
+    color: white; 
+    margin-bottom: 1rem;
+}
+
+.home-content h3 span {
+    color: var(--main-color); 
+}
+
+.home-content h2 {
+    font-size: 6rem; 
+    font-weight: bold; 
+    text-align: center; 
+    margin-bottom: 3rem; 
+    color: var(--text-color); 
+}
+
+.home-content h2 span {
+    background: linear-gradient(90deg, #b12eba 10%, #f9d423 100%);
+    -webkit-background-clip: text;
+    color: transparent;
+}
+
+.home-content p {
+    font-size: 1.6rem;
+    line-height: 1.8;
+    margin-bottom: 2rem;
+    color: var(--text-color);
+}
+
+social-icons {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.btn-group {
+    display: flex;
+    gap: 1rem;
+}
+
+.btn-group a {
+    display: inline-block;
+    padding: 1rem 2rem; 
+    font-size: 1.6rem; 
+    font-weight: 600;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 2.5rem; 
+    transition: all 0.3s ease-in-out;
+    cursor: pointer;
+}
+
+.btn-group a:first-of-type {
+    background: linear-gradient(90deg, #b12eba 10%, #f9d423 100%);
+    color: white;
+    box-shadow: 0 0 10px var(--main-color); 
+    border: none;
+}
+
+.btn-group a:first-of-type:hover {
+    transform: scale(1.05); 
+    background: linear-gradient(90deg, #f9d423 10%, #b12eba 100%);
+    box-shadow: 0 0 20px var(--main-color); 
+}
+
+.btn-group a:last-of-type {
+    background-color: rgb(60, 45, 198);
+    color: var(--main-color);
+    border: 2px solid var(--main-color);
+    box-shadow: 0 0 8px transparent; 
+}
+
+.btn-group a:last-of-type:hover {
+    box-shadow: 0 0 15px var(--main-color); 
+    background-color: var(--main-color);
+    color: black;
+}
+
+.description p{
+    font-size: 1.6rem;
+    font-weight: 500;
+    line-height: 1.6;
+    margin-block-end: 3rem;
+}
+.social-icons a {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem; 
+    padding: 1rem;
+    background: transparent;
+    border: 2px solid var(--main-color);
+    border-radius: 50%;
+    color: var(--main-color);
+    margin: 1rem 0.5rem; 
+    transition: 0.3s ease-in-out;
+}
+.social-icons a:hover{
+    background: var(--main-color);
+    color: white;
+    transform: scale(1.2) translateY(-5px);
+    box-shadow: 0 0 25px var(--main-color);
+}
+.about {
+    display: flex;
+    justify-content: center; /* Center content horizontally */
+    align-items: center; /* Center content vertically */
+    flex-direction: row; 
+    gap: 5rem; 
+    height: 100%; /* Ensure it takes the full height of the gradient */
+    background: var(--secondary-bg-color); 
+    padding: 0; /* Remove padding */
+}
+.about-img {
+    flex: 1; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.about-content {
+    flex: 2; 
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; 
+    text-align: left; 
+}
+
+.about-img img {
+    inline-size: 100%; 
+    max-inline-size: 300px; 
+    border-radius: 50%;
+    box-shadow: 0 0 15px var(--main-color); 
+    transition: 0.4s ease-in-out;
+}
+.about-img img:hover{
+    box-shadow: 0 0 25px var(--main-color),
+                0 0 50px var(--main-color),
+                0 0 100px var(--main-color);
+}
+.about-content h2 {
+    font-size: 6rem; /* Increase font size for all h2 headings */
+    font-weight: bold; /* Ensure the heading is bold */
+    text-align: center; /* Center align all h2 headings */
+    margin-bottom: 3rem; /* Add spacing below the headings */
+    color: var(--text-color); /* Ensure consistent text color */
+}
+.about-content p {
+    font-size: 2rem; 
+    line-height: 1.6; 
+    margin-block-end: 3rem; 
+    max-inline-size: none; 
+    text-align: left; 
+}
+.about-content .btn {
+    display: inline-block;
+    padding: 1rem 2.5rem; 
+    background: linear-gradient(90deg, #b12eba 10%, #f9d423 100%); 
+    color: white; 
+    border: none;
+    border-radius: 3rem;
+    font-size: 1.6rem;
+    font-weight: 600;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0 0 15px var(--main-color); 
+}
+
+.about-content .btn:hover {
+    transform: scale(1.1); 
+    background: linear-gradient(90deg, #f9d423 10%, #b12eba 100%); 
+    box-shadow: 0 0 25px #3ad8f7; 
+}
+
+
+
+/* Services Section */
+
+.services {
+    display: flex;
+    justify-content: center; /* Center content horizontally */
+    align-items: center; /* Center content vertically */
+    height: 100%; /* Ensure it takes the full height of the gradient */
+    padding: 0; /* Remove padding */
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    text-align: center;
+    flex-direction: column; /* Stack the heading and content vertically */
+    align-items: center; /* Center align all content */
+    margin-top: 5rem; /* Add spacing above the services section */
+}
+
+.services .heading {
+    text-align: center; /* Center the heading text */
+    margin: 0 auto 3rem; /* Center the heading and add spacing below */
+    width: 100%; /* Ensure the heading spans the full width */
+    font-size: 6rem; /* Increase font size for better prominence */
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    background: linear-gradient(90deg, #b12eba 20%, #f9d423 80%); /* Previous gradient */
+    -webkit-background-clip: text;
+    color: transparent; /* Make the gradient visible */
+    position: relative; /* Ensure proper positioning */
+    top: 0; /* Place the heading at the top of the section */
+    margin-bottom: 3rem; /* Add spacing below the heading */
+}
+
+.services-container {
+    display: grid; /* Use grid layout for rows */
+    grid-template-columns: repeat(4, 1fr); /* Ensure 4 columns per row */
+    gap: 2rem; /* Add spacing between the boxes */
+    justify-content: center; /* Center the grid horizontally */
+    align-items: start; /* Align items at the top */
+    padding: 2rem; /* Add padding around the grid */
+}
+
+.service-box {
+    background: linear-gradient(135deg, rgba(213, 53, 130, 0.8), rgba(22, 22, 21, 0.8)); /* Previous gradient */
+    color: var(--text-color); /* Ensure text remains visible */
+    padding: 2rem;
+    border-radius: 1rem;
+    width: 320px; /* Slightly increase the width */
+    height: 460px; /* Increase the height further to fit all text */
+    text-align: center;
+    transition: transform 0.3s ease-in-out;
+    border: 2px solid var(--main-color);
+    box-shadow: 0 0 10px rgba(249, 81, 81, 0.2);
+    position: relative; /* Ensure proper stacking context */
+    z-index: 1; /* Ensure content is above the background */
+    max-width: 300px; /* Set a consistent width for each box */
+    margin: auto; /* Center each box within its grid cell */
+}
+
+.service-box:hover {
+    background: var(--main-color);
+    transform: scale(1.05);
+    color: var(--text-color); /* Ensure icons and headers remain white */
+}
+.service-box:hover p {
+    color: var(--text-color); 
+}
+
+.service-box i {
+    font-size: 4rem;
+    margin-bottom: 1.5rem; 
+    color: var(--text-color); /* Ensure icons are white */
+    display: block; 
+    text-align: center; 
+    vertical-align: middle;
+    font-family: 'Boxicons'; 
+    font-style: normal; 
+}
+
+.service-box h4 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    color: var(--text-color); /* Ensure headers are white */
+}
+
+.service-box p {
+    font-size: 1.4rem;
+    line-height: 1.6;
+    color: var(--text-color);
+}
+.projects {
+    display: flex;
+    justify-content: center; /* Center content horizontally */
+    align-items: center; /* Center content vertically */
+    height: auto; /* Allow the section height to adjust dynamically */
+    padding: 7rem 2rem; /* Revert padding to its previous value */
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    text-align: center;
+    flex-direction: column; /* Stack header and content vertically */
+    align-items: center; /* Center align all content */
+    margin-top: 5rem; /* Revert margin above the section */
+}
+
+.projects-content h2 {
+    font-size: 2rem; /* Match the font size of the About Me section header */
+    margin: 0 auto 6rem; /* Keep spacing below the header */
+    padding-top: 3rem; /* Keep padding above the header */
+}
+
+.projects .heading {
+    font-size: 6rem; /* Increase font size for better prominence */
+    background: linear-gradient(90deg, #b12eba 20%, #f9d423 80%); /* Previous gradient */
+    -webkit-background-clip: text;
+    color: transparent; /* Make the gradient visible */
+}
+
+.projects-box {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 4rem; /* Revert spacing between project cards */
+    padding: 2rem;
+    margin-top: 0; /* Remove additional margin above the containers */
+}
+
+.project-card {
+    background-color: var(--secondary-bg-color);
+    border: 2px solid var(--main-color);
+    border-radius: 2rem;
+    padding: 2rem;
+    text-align: center;
+    box-shadow: 0 0 10px var(--main-color);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 25px var(--main-color);
+}
+
+.project-card img {
+    max-width: 100%;
+    border-radius: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.project-card h3 {
+    font-size: 3.4rem;
+    margin-bottom: 2rem;
+    color: var(--main-color);
+}
+
+.project-card p {
+    font-size: 1.6rem;
+    margin-bottom: 2rem;
+    color: var(--text-color);
+}
+
+.project-card .btn {
+    display: inline-block;
+    padding: 1rem 2rem;
+    font-size: 1.6rem;
+    color: var(--text-color);
+    background: var(--main-color);
+    border-radius: 2rem;
+    transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.project-card .btn:hover {
+    background: var(--text-color);
+    color: var(--main-color);
+    transform: scale(1.1);
+}
+
+.contact {
+    padding: 5rem 2rem;
+    background-color: var(--secondary-bg-color); /* Match the About Me section background */
+    color: var(--text-color);
+    text-align: center;
+    margin-top: 5rem; /* Add spacing above the contact section */
+}
+
+.contact h2 {
+    font-size: 4rem;
+    margin-bottom: 3rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: var(--text-color);
+}
+
+.contact form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+}
+
+.contact .input-group {
+    display: flex;
+    gap: 2rem;
+    width: 100%;
+    max-width: 800px;
+}
+
+.contact .input-box {
+    flex: 1;
+}
+
+.contact .input-box input,
+.contact textarea {
+    width: 100%;
+    padding: 1.5rem;
+    font-size: 1.6rem;
+    color: var(--text-color);
+    background: transparent;
+    border: 2px solid var(--main-color);
+    border-radius: 1rem;
+    outline: none;
+    resize: none;
+    transition: 0.3s ease-in-out;
+}
+
+.contact .input-box input:focus,
+.contact textarea:focus {
+    border-color: var(--main-color);
+    box-shadow: 0 0 10px var(--main-color);
+}
+
+.contact textarea {
+    height: 150px;
+}
+
+.contact .btn {
+    padding: 1.5rem 3rem;
+    font-size: 1.8rem;
+    color: var(--bg-color);
+    background: var(--main-color);
+    border: none;
+    border-radius: 2rem;
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+}
+
+.contact .btn:hover {
+    background: linear-gradient(90deg, #f9d423 10%, #b12eba 100%);
+    box-shadow: 0 0 15px var(--main-color);
+}
+
+.footer {
+    background-color: var(--secondary-bg-color);
+    padding: 3rem 2rem;
+    text-align: center;
+}
+
+.footer .social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+
+.footer .social-icons a {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 4rem;
+    height: 4rem;
+    font-size: 2rem;
+    color: var(--main-color);
+    border: 2px solid var(--main-color);
+    border-radius: 50%;
+    transition: 0.3s ease-in-out;
+}
+
+.footer .social-icons a:hover {
+    background-color: var(--main-color);
+    color: var(--text-color);
+    box-shadow: 0 0 10px var(--main-color);
+}
+
+.footer .list {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin-bottom: 2rem;
+    list-style: none;
+    padding: 0;
+}
+
+.footer .list li a {
+    color: var(--text-color);
+    font-size: 1.6rem;
+    text-decoration: none;
+    transition: 0.3s ease-in-out;
+}
+
+.footer .list li a:hover {
+    color: var(--main-color);
+}
+
+.footer .copyright {
+    font-size: 1.4rem;
+    color: var(--text-color);
+    margin-top: 2rem;
+}
+
+/* Responsive Styles */
+@media(max-width:1285px) {
+    #menu-icon {
+        display: none; /* Hide the menu icon */
+    }
+    .navbar {
+        position: absolute;
+        top: 100%;
+        right: 0;
+        width: 50%;
+        padding: 1rem 2rem;
+        background: rgba(0, 0, 0, 0.9);
+        border-bottom-left-radius: 2rem;
+        border-left: 2px solid var(--main-color);
+        border-bottom: 2px solid var(--main-color); /* Ensure consistent border styling */
+    }
+    .navbar a {
+        display: block;
+        font-size: 2rem;
+        margin: 3rem 0;
+        color: var(--text-color);
+    }
+    .gradient-btn {
+        display: none; /* Ensure gradient button is hidden */
+    }
+    .home {
+        flex-direction: column-reverse;
+        margin: 5rem 0;
+        text-align: center;
+    }
+    .home-content {
+        align-items: center;
+        text-align: center;
+    }
+    .home-img img {
+        width: 56vw;
+    }
+    .about {
+        flex-direction: column;
+        text-align: center;
+    }
+    .about h2 {
+        text-align: center;
+        margin: 2rem 0;
+    }
+    .about img {
+        width: 52vw;
+    }
+    .contact form {
+        flex-direction: column;
+    }
+}

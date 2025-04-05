@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New Customer</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="new-customer-style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/boxicons/2.1.4/css/boxicons.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"> 
+    <link href="https://cdn.jsdelivr.net/npm/remixicon/fonts/remixicon.css" rel="stylesheet"> 
+</head>
+<body>
+    <nav id="navbar">
+        <div class="nav__content">
+            <a href="Portfolio.index.html" class="logo">Amanda<span>Berry</span></a>
+            <ul>
+                <li><a href="Portfolio.index.html#home">Home</a></li>
+                <li><a href="Portfolio.index.html#about">About Me</a></li>
+                <li><a href="Portfolio.index.html#services">My Services</a></li>
+                <li><a href="Portfolio.index.html#projects">My Projects</a></li>
+                <li><a href="Portfolio.index.html#contact">Contact Me</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section class="new-customer">
+        <div class="container">
+            <div class="wrapper">
+                <h1 class="wrapper-header">Welcome! Have A Project?</h1>
+                <p>We are excited to have you here. Please fill out the form below to get started.</p>
+            </div>
+            <form id="new-customer-form" class="form-grid">
+                <div class="form-row">
+                    <label for="name"><i class="fa-solid fa-user"></i> Full-Name:</label>
+                    <input type="text" id="full name" name="full name" required>
+                </div>
+                <div class="form-row">
+                    <label for="email"><i class="fa-solid fa-envelope"></i> Email:</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-row">
+                    <label for="website"><i class="fa-solid fa-globe"></i> Website:</label>
+                    <input type="text" id="company" name="company" required>
+                </div>
+                <div class="form-row">
+                    <label for="phone"><i class="fa-solid fa-phone"></i> Phone:</label>
+                    <input type="tel" id="phone" name="phone" required>
+                </div>
+                <div class="form-row">
+                    <label for="budget-price">Budget Price:</label>
+                    <input type="number" id="budget-price" name="budget-price" required>
+                </div>
+                <div class="form-row">
+                    <label for="Your Project-title">Project Title:</label>
+                    <input type="text" id="Your Project-title" name="Your Project-title" required>
+                </div>
+                <div class="form-row">
+                    <label for="estimate-date">Estimate-Date:</label>
+                    <input type="date" id="estimate-date" name="estimate-date" required>
+                </div>
+                <div class="form-row">
+                    <label for="message">Project Description:</label>
+                    <textarea id="message" name="message" rows="4" required></textarea>
+                </div>
+                <button type="submit">Submit</button>
+            </form>
+            <div id="response-message"></div>
+            <p>
+                <a href=" amandaberry.developer@gmail.com  style="display: inline-flex; align-items: center; gap: 0.5rem; text-decoration: none; color: #d53582;">
+                    <i class="material-icons" style="font-size: 1.6rem; vertical-align: middle;">email</i>
+                    <span>Email Me</span>
+                </a>
+                | <a href="Portfolio.index.html">Back to Home</a>
+                | <a href="Portfolio.index.html#contact">Contact Me</a>
+            </p>
+        </div>
+    </section>
+    <footer class="footer">
+        <div class="social-icons">
+            <a href="#"><i class="bx bxl-github"></i></a>
+            <a href="#"><i class="bx bxl-linkedin"></i></a>
+            <a href="#"><i class="bx bxl-instagram"></i></a>
+            <a href="#"><i class="bx bxl-tiktok"></i></a>
+            <a href="#"><i class="bx bxl-twitter"></i></a>
+            <a href="#"><i class="bx bxl-facebook"></i></a>
+        </div>
+        <ul class="list">
+            <li><a href="#">FAQ</a></li>
+            <li><a href="#about">About Me</a></li>
+            <li><a href="#about">My Services</a></li>
+            <li><a href="#projects">My Projects</a></li>
+            <li><a href="#contact">Contact Me</a></li>
+        </ul>
+        <p class="copyright">
+            © 2025 Amanda Berry | All Rights Reserved.
+        </p>
+    </footer>
+
+          
+    <script src="script.js"></script> 
+</body>
+</html>
